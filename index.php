@@ -95,6 +95,21 @@
 			<td>2</td>
 			<td>2</td>
 		</tr>	
+	<script type="text/javascript">
+		
+		{
+			date: "2017-11-09",
+			product: "aguoninė",
+			data: 
+		}
+
+		[5,20,19,4,2]
+
+		var Pavadinimas = ["aguoninė", "varškės", "duona balta", "duona juoda", "duona balta", "duona ruginė"];
+		var data =
+		var 
+			
+	</script>	
 			
 	</tbody>
 
