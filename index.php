@@ -97,77 +97,7 @@
 		</tr>	
 	<script type="text/javascript">
 
-		var Pavadinimas = ["aguoninė", "varškės", "duona balta", "duona juoda", "duona balta", "duona ruginė"];
 		
-		// Option I - unsorted
-
-		var _arrayofObjects = [
-			{
-				"date": "2017-11-09",
-				"product": "aguoninė",
-				"data:": [5,20,19,4,2],
-			}
-		// Option II - sort by date
-
-		var _objectByDay = {
-			"2017-11-09":
-			[
-				{
-					"date": "2017-11-09",
-					"product": "aguoninė",
-					"data:": [5,20,19,4,2],
-				}
-
-		// Option III - objects by product
-		var _ObjectsByProduct = {
-			"varškės":
-			[
-			{
-				"date": "2017-11-09",
-				"data:": [3,28,25,2,4]
-			},
-			{
-				"date": "2017-11-10",
-				"data:": [3,28,25,2,4]
-			}
-			],
-			"aguoninė":
-			[
-			{
-				"date": "2017-11-09",
-				"data:": [5,20,19,4,2],
-			},
-			{
-				"date": "2017-11-10",
-				"data:": [5,20,19,4,2],
-			},
-			];
-
-		// Option IV - optimized by date
-		var _optimizedByDate = {
-			"2017-11-09":
-			{
-				"varškės": [3,28,25,2,4],
-				"aguoninė": [5,20,19,4,2],
-			}
-			
-			
-		// Option V - optimized by product
-		var _optimizedByProduct = {
-			"varškės":
-			{
-				"2017-11-09": [3,28,25,2,4],
-				"2017-11-10": [5,20,19,4,2],
-			}
-		// Option final
-
-		var _products = 
-			{
-				"p-1": "varškės",
-				"p-2": "aguoninė",
-			}
-
-			
 	</script>	
 			
 	</tbody>
