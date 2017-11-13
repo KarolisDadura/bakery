@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bakery</title>
+	<title>Autoįvykių_suvestinė</title>
 	<link rel="stylesheet" type="text/css" href="app.css">
 </head>
 <body>
@@ -10,8 +10,8 @@
 	<thead>
 		<tr>
 		<th rowspan="2">Pavadinimas</th>
-		<th colspan="5">2017-11-09</th>
-		<th colspan="5">2017-11-10</th>
+		<th colspan="5">2017-11-12</th>
+		<th colspan="5">2017-11-13</th>
 		</tr>
 		<tr>
 		<th>VL</th> <!-- Vakrykštis likutis-->
@@ -24,6 +24,17 @@
 		<th>PR</th> <!-- Parduota-->
 		<th>SG</th> <!-- Sugadinta-->
 		<th>GL</th> <!-- Galutinis likutis-->
+
+		Pasidaryti duomenų masyvus Autoįvykių suvestinei.
+- Įvykis
+- Data
+- Adresas
+- Dalyviai
+
+- Dalyvių tipai:
+- Mašina
+- Dviratis
+- Pestysis
 	
 		</tr>
 	</thead>
@@ -119,53 +130,53 @@
 				}
 
 		// Option III - objects by product
-		var _ObjectsByProduct = {
-			"varškės":
-			[
-			{
-				"date": "2017-11-09",
-				"data:": [3,28,25,2,4]
-			},
-			{
-				"date": "2017-11-10",
-				"data:": [3,28,25,2,4]
-			}
-			],
-			"aguoninė":
-			[
-			{
-				"date": "2017-11-09",
-				"data:": [5,20,19,4,2],
-			},
-			{
-				"date": "2017-11-10",
-				"data:": [5,20,19,4,2],
-			},
-			];
+			var _ObjectsByProduct = {
+				"varškės":
+				[
+				{
+					"date": "2017-11-09",
+					"data:": [3,28,25,2,4]
+				},
+				{
+					"date": "2017-11-10",
+					"data:": [3,28,25,2,4]
+				}
+				],
+				"aguoninė":
+				[
+				{
+					"date": "2017-11-09",
+					"data:": [5,20,19,4,2],
+				},
+				{
+					"date": "2017-11-10",
+					"data:": [5,20,19,4,2],
+				},
+				],
 
 		// Option IV - optimized by date
 		var _optimizedByDate = {
 			"2017-11-09":
-			{
-				"varškės": [3,28,25,2,4],
-				"aguoninė": [5,20,19,4,2],
-			}
+				{
+					"varškės": [3,28,25,2,4],
+					"aguoninė": [5,20,19,4,2],
+				},
 			
 			
 		// Option V - optimized by product
 		var _optimizedByProduct = {
 			"varškės":
-			{
-				"2017-11-09": [3,28,25,2,4],
-				"2017-11-10": [5,20,19,4,2],
-			}
+				{
+					"2017-11-09": [3,28,25,2,4],
+					"2017-11-10": [5,20,19,4,2],
+				},
 		// Option final
 
 		var _products = 
-			{
-				"p-1": "varškės",
-				"p-2": "aguoninė",
-			}
+		{
+			"p-1": "varškės",
+			"p-2": "aguoninė",
+		},
 
 			
 	</script>	
