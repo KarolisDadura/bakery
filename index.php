@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<table id="hand-made" border="1px">
+<table id="hand-made">
 	<thead>
 		<tr>
 		<th rowspan="2">Pavadinimas</th>
