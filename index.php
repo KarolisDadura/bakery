@@ -2,11 +2,11 @@
 <html>
 <head>
 	<title>Bakery</title>
-	<link rel="stylesheet" type="text/css" href="app.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
 
-<table border>
+<table id="hand-made" border="1px">
 	<thead>
 		<tr>
 		<th rowspan="2">Pavadinimas</th>
@@ -95,14 +95,13 @@
 			<td>2</td>
 			<td>2</td>
 		</tr>	
-	<script type="text/javascript">
-
 		
-	</script>	
 			
 	</tbody>
 
-</table>	
+</table>
+
+<?php @include_once('app/app.php'); ?>
 
 </body>
 </html>
