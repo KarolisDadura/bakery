@@ -1,19 +1,7 @@
 
 #hand-made {display: none;}
-
-body {
-	background-color: lightblue;
-}
-h1 {
-	color: black;
-}
-p{
-	font-family: verdana;
-	font-size: 20px;
-}
-
-
-thead 
-{
-    background-color: green;
-}
+table, th, td {border: 1px solid black;}
+thead {background-color: green;}
+body {background-color: lightblue;}
+h1 {color: black;}
+p{font-family: verdana;	font-size: 20px;}
