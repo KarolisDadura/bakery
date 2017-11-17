@@ -2,19 +2,21 @@
 
 $new_data = ($_POST);
 
-var_dump($new_data);
+//var_dump($new_data);
 
 $existing_data = json_decode (file_get_contents("data/bakery-data.json"));
 
 $existing_data = objectToArray ($existing_data);
 
-var_dump($existing_data);
+updateData($existing_data, $new_data);
+
+//var_dump($existing_data);
 //var_dump((array) $existing_data);
 
 function formatData(array &$data)
 
 {
-	
+
 }
 
 
@@ -32,4 +34,16 @@ function objectToArray(stdClass $obj) : array
 	}
 
 	return $obj;
+}
+
+function updateData(&$existing_data, $new_data)
+{
+	if (isset($existing_data [$new_data ["Data"]]))
+	{
+		echo "yes";
+	}
+	else
+	{
+		echo "no";
+	}
 }
