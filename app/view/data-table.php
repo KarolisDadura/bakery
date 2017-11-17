@@ -52,15 +52,3 @@ $rows = [];
 
 <?php
 
-return;
-
-var_dump($data);
-
-$html = '';
-
-$html .= '<table>';
-$html .= '<thead>';
-$html .= '</thead>';
-$html .= '</table>';
-
-echo $html;
