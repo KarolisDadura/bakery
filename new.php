@@ -11,9 +11,9 @@
 			<input type="Date" name="Data"> <br>
 
 		<div>Prekė :</div>
-		<select name="product">
-			<option value="1">Aguoninė</option>
-			<option value="2">Varškės</option>
+		<select name="Product">
+			<option value="p-1">Aguoninė</option>
+			<option value="p-2">Varškės</option>
 		</select>
 			
 		<div> vakarykštis likutis: <div/> 
