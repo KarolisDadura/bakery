@@ -2,6 +2,9 @@
 
 $new_data = ($_POST);
 
+//TODO:
+//check if all parameters are provided
+
 $existing_data = json_decode (file_get_contents("Data/bakery-data.json"));
 $existing_data = objectToArray ($existing_data);
 
