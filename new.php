@@ -10,10 +10,14 @@
 		<div> Data :<div/> 
 			<input type="Date" name="Data"> <br>
 
-		<div>Prekė :</div>
+		<div>Prekė:</div>
 		<select name="Product">
-			<option value="p-1">Aguoninė</option>
-			<option value="p-2">Varškės</option>
+			<?php  
+				$products= json_decode (file_get_contents("Data/products.json"), true);
+				foreach ($products as $pr => $produkto_pavadinimas) {
+					echo "<option value=\"$pr\">\"$produkto_pavadinimas\"</option>";
+				}
+			?>
 		</select>
 			
 		<div> vakarykštis likutis: <div/> 
@@ -29,6 +33,9 @@
 
 		<input type="submit" value="Išsaugoti duomenis">
 
-	</form>
+	</form> <br>
+
+	<a href="index.php">grįžti į pradžią</a>
+
 </body>
 </html>

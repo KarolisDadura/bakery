@@ -2,8 +2,20 @@
 
 $new_data = ($_POST);
 
-//TODO:
-//check if all parameters are provided
+$required_fields =["Data", "Product", "VL","PG", "PR", "SG","GL"];
+
+$validData = true;
+
+	foreach ($required_fields as $value) {
+	if(!isset($new_data[$value]) || empty($new_data[$value]))
+	{
+		$validData = false;
+		echo "Nerastas parametras: $value <br>";
+	}
+}
+
+if (!$validData)
+return;
 
 $existing_data = json_decode (file_get_contents("Data/bakery-data.json"));
 $existing_data = objectToArray ($existing_data);
@@ -32,15 +44,17 @@ function updateData(&$existing_data, $new_data)
 {
 	if (isset($existing_data [$new_data ["Data"]]))
 	{
-		echo "yes";
+		
 	
 		if (isset($existing_data [$new_data ["Data"]][$new_data["Product"]]))
 		{
-			echo "error";
+			echo "toks produktas jau egzistuoja";
 		}
 		else
 		{
+			$existing_data =createNewProduct($existing_data, $new_data);
 			echo "create Product\r\n";
+
 		}
 	}
 	else
@@ -51,7 +65,7 @@ function updateData(&$existing_data, $new_data)
 
 	}
 
-	print_r($existing_data);
+	
 }
 
 function createNewProduct ($existing_data, $new_data)
@@ -67,3 +81,4 @@ function createNewProduct ($existing_data, $new_data)
 	return $existing_data;
 }
 
+echo "<br> <a href=\"index.php\">grįžti į pradžią</a>";
