@@ -53,7 +53,7 @@ function updateData(&$existing_data, $new_data)
 		else
 		{
 			$existing_data =createNewProduct($existing_data, $new_data);
-			echo "create Product\r\n";
+			echo "produktas sekmingai sukurtas\r\n";
 
 		}
 	}
