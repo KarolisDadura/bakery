@@ -1,10 +1,13 @@
 <?php
 
-$products= json_decode (file_get_contents("Data/products.json"), true);
-
-
 $days = $keys = '';
 $rows = [];
+
+
+ksort($data);
+
+
+$products= json_decode (file_get_contents("Data/products.json"), true);
 
 				foreach ($data as $key => $value) {
 					$days .= "<th colspan=\"5\">$key</th>";
