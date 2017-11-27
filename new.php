@@ -23,7 +23,7 @@
 		<div> vakarykštis likutis: <div/> 
 			<input type="number" name="initial"> <br>
 		<div> pagaminta:<div/> 
-			<input type="number" name="prodiced"> <br>
+			<input type="number" name="produced"> <br>
 		<div> parduota:<div/> 
 			<input type="number" name="sold"> <br>
 		<div> sugadinta:<div/> 
