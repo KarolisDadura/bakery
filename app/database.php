@@ -12,6 +12,8 @@ function db_connect()
 	{
 		die("Could not connect");
 	}
+
+	$conn->set_charset('utf8mb4');
 	return $conn;
 }
 
@@ -21,16 +23,6 @@ function db_query(string $query)
 	$result = $conn->query ($query);
 	$conn->close();
 	return $result;
-}
-
-
-$query = "SELECT * FROM `bakery_products`";
-
-$result = db_query($query);
-
-foreach ($result as $key => $value) 
-{
-	print_r($value);
 }
 
 /*$conn = mysqli_connect($servername, $username, $password, $dbname, 3307);
