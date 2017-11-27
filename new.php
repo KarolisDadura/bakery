@@ -8,10 +8,10 @@
 
 	<form method="POST" action="create.php">
 		<div> Data :<div/> 
-			<input type="Date" name="Data"> <br>
+			<input type="date" name="date"> <br>
 
 		<div>Prekė:</div>
-		<select name="Product">
+		<select name="product_id">
 			<?php  
 				$products= json_decode (file_get_contents("Data/products.json"), true);
 				foreach ($products as $pr => $produkto_pavadinimas) {
@@ -21,15 +21,15 @@
 		</select>
 			
 		<div> vakarykštis likutis: <div/> 
-			<input type="number" name="VL"> <br>
+			<input type="number" name="initial"> <br>
 		<div> pagaminta:<div/> 
-			<input type="number" name="PG"> <br>
+			<input type="number" name="prodiced"> <br>
 		<div> parduota:<div/> 
-			<input type="number" name="PR"> <br>
+			<input type="number" name="sold"> <br>
 		<div> sugadinta:<div/> 
-			<input type="number" name="SG"> <br>
+			<input type="number" name="damaged"> <br>
 		<div> galutinis likutis:<div/> 
-			<input type="number" name="GL"> <br>
+			<input type="number" name="closed"> <br>
 
 		<input type="submit" value="Išsaugoti duomenis">
 
