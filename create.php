@@ -2,7 +2,7 @@
 
 $new_data = ($_POST);
 
-$required_fields =["Data", "Product", "VL","PG", "PR", "SG","GL"];
+$required_fields =["date", "product_id", "initial","produced", "sold", "damaged","closed"];
 
 $validData = true;
 
@@ -17,7 +17,31 @@ $validData = true;
 if (!$validData)
 return;
 
-$existing_data = json_decode (file_get_contents("Data/bakery-data.json"));
+@INCLUDE_ONCE('app/database.php');
+
+	$query = "INSERT INTO `bakery_products_history` (
+	`date`,
+	`product_id`,
+	`initial`,
+	`produced`,
+	`sold`,
+	`damaged`,
+	`closed`) VALUES (".
+	$new_data["date"].",".
+	$new_data["product_id"].",".
+	$new_data["initial"].",".
+	$new_data["produced"].",".
+	$new_data["sold"].",".
+	$new_data["damaged"].",".
+	$new_data["closed"].")";
+
+	die($query);
+
+	$result = db_query($query);
+
+print_r($result);
+
+/*$existing_data = json_decode (file_get_contents("Data/bakery-data.json"));
 $existing_data = objectToArray ($existing_data);
 
 updateData($existing_data, $new_data);
@@ -81,4 +105,4 @@ function createNewProduct ($existing_data, $new_data)
 	return $existing_data;
 }
 
-echo "<br> <a href=\"index.php\">grįžti į pradžią</a>";
+echo "<br> <a href=\"index.php\">grįžti į pradžią</a>";*/

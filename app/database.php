@@ -25,6 +25,11 @@ function db_query(string $query)
 	return $result;
 }
 
+function db_insertQuery(string $tablename, array $data)
+{
+
+}
+
 /*$conn = mysqli_connect($servername, $username, $password, $dbname, 3307);
 
 if (!$conn)
