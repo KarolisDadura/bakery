@@ -17,9 +17,21 @@ $validData = true;
 if (!$validData)
 return;
 
+
+
 @INCLUDE_ONCE('app/database.php');
 
-	$query = "INSERT INTO `bakery_products_history` (
+
+
+	$query = db_insertQuery ('bakery_products_history', $new_data, true);
+	$result = db_query($query);
+
+	print_r($result);
+
+
+
+
+	/*  INSERT INTO (
 	`date`,
 	`product_id`,
 	`initial`,
@@ -39,7 +51,7 @@ return;
 
 	$result = db_query($query);
 
-print_r($result);
+print_r($result);*/
 
 /*$existing_data = json_decode (file_get_contents("Data/bakery-data.json"));
 $existing_data = objectToArray ($existing_data);

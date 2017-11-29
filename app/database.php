@@ -21,31 +21,37 @@ function db_query(string $query)
 {
 	$conn = db_connect();
 	$result = $conn->query ($query);
+
+	if($result)
+	{
+		$conn->close();
+		return $result;
+	}
+	print_r($conn);
 	$conn->close();
-	return $result;
+
+die();
+
 }
 
-function db_insertQuery(string $tablename, array $data)
+function db_insertQuery(string $tablename, array $data, bool $uuid = false) : string
 {
+	if ($uuid)
+		$data['id'] = uniqid ();
 
+
+	$keys = $values ='';
+
+	foreach ($data as $key =>$value) {
+		$keys .= "`$key`,";
+		$values .="'$value',";
+	}
+$keys = rtrim($keys, ",");
+$values = rtrim($values, ",");
+
+
+$query = "INSERT INTO `$tablename` ($keys) VALUES ($values)";
+
+return ($query);
 }
 
-/*$conn = mysqli_connect($servername, $username, $password, $dbname, 3307);
-
-if (!$conn)
-{
-	die("Could not conect");
-}
-
-$result = $conn->query("SHOW TABLES");
-
-foreach ($result as $key => $value) {
-	
-	print_r ($key);
-
-	print_r($value);
-}
-
-
-
-$conn->close();*/
