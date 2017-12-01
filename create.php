@@ -7,7 +7,7 @@ $required_fields =["date", "product_id", "initial","produced", "sold", "damaged"
 $validData = true;
 
 	foreach ($required_fields as $value) {
-	if(!isset($new_data[$value]) || empty($new_data[$value]))
+	if(!isset($new_data[$value]) || strlen($new_data[$value])) < 1 || ($new_data[$value]) < 0
 	{
 		$validData = false;
 		echo "Nerastas parametras: $value <br>";
@@ -115,6 +115,6 @@ function createNewProduct ($existing_data, $new_data)
 	];
 
 	return $existing_data;
-}
+}*/
 
-echo "<br> <a href=\"index.php\">grįžti į pradžią</a>";*/
+echo "<br> <a href=\"new.php\">grįžti į pradžią</a>";
