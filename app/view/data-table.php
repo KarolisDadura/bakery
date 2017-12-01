@@ -1,45 +1,86 @@
 <?php
 
-$days = $keys = '';
-$rows = [];
+$rows = $days = [];
+$keys = '';
+
+foreach ($products as $value) 
+{
+	
+	if (!isset($rows[$value['id']]))
+	{
+		$rows[$value['id']] = [];
+		$rows[$value['id']]['name'] = '<td>' . $value ['name'] . '</td>';
+	}
+}
+
+	/*print_r($rows);
+
+	die ();*/
 
 
+foreach ($productHistory as $value) 
+{
 
-	foreach ($productHistory as $value) {
+	if (!isset($days[$value['date']]))
+	{
+		$days[$value['date']] = $value['date'] ;
+		$keys .= '<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>';
 
-		$days .= '<th colspan=5>' . $value['date'] . '</th>';
-		$keys .= "<th>VL</th><th>PG</th><th>PR</th><th>SG</th><th>GL</th>";
-
-		
-		/*foreach ($products as $key => $name) 
+		foreach ($rows as &$product) 
 		{
-			
-			if (!isset($rows[$key]))
-				{
-					$rows[$key] = "<td>$name</td>";
-				}
-
-			if(isset($value[$key])) 
-			{
-				foreach ($value[$key] as $amount) 
-				{
-					$rows[$key] .= "<td>$amount</td>";
-				}
-			}
-
-			else 
-				$rows[$key] .= "<td></td><td></td><td></td><td></td><td></td>";
-		
-							
-			foreach ($data as $amount) {
-
-			$rows[$key] .= "<td>$amount</td>";	
+			$product[$value['date']] = '<td></td><td></td><td></td><td></td><td></td>';
 		}
-		}*/
 	}
 
 
-//return;
+				
+
+	/*$rows[$value['product_id']] .= '<td>' . $value['initial'] . '</td>';
+	$rows[$value['product_id']] .= '<td>' . $value['produced'] . '</td>';
+	$rows[$value['product_id']] .= '<td>' . $value['sold'] . '</td>';
+	$rows[$value['product_id']] .= '<td>' . $value['damaged'] . '</td>';
+	$rows[$value['product_id']] .= '<td>' . $value['closed'] . '</td>';*/
+
+
+
+
+
+	/*if (!isset($rows[$value['product_id']]))
+				{
+					$rows[$value['product_id']] = '<td>' . $name['product_id'] . '</td>';
+				}*/
+
+
+
+		
+	/*foreach ($products as $key => $name) 
+	{
+		
+		if (!isset($rows[$key]))
+			{
+				$rows[$key] = "<td>$name</td>";
+			}
+
+		if(isset($value[$key])) 
+		{
+			foreach ($value[$key] as $amount) 
+			{
+				$rows[$key] .= "<td>$amount</td>";
+			}
+		}
+
+		else 
+			$rows[$key] .= "<td></td><td></td><td></td><td></td><td></td>";
+	
+						
+		foreach ($data as $amount) {
+
+		$rows[$key] .= "<td>$amount</td>";	
+	}
+	}*/
+}
+
+
 
 ?>
 <table>
@@ -47,7 +88,9 @@ $rows = [];
 		<tr>
 			<th rowspan="2">Pavadinimas</th>
 			<?php
-				echo $days;	
+				foreach ($days as $date) {
+					echo  '<th colspan=5>' . $date . '</th>' ;
+				}
 			?>
 		</tr>
 		<tr>
@@ -59,11 +102,18 @@ $rows = [];
 	<tbody>
 
 		<?php
-				foreach ($rows as $row) {
-					echo "<tr>" . $row ."<tr>";
-				}
 
-			?>
+			foreach ($rows as $data){
+				echo '<tr>';
+				
+				foreach ($data as $key => $value){ 
+					echo $value;
+				}
+					echo '<tr>';
+				
+			}
+
+		?>
 			
 	</tbody>
 </table>

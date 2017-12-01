@@ -2,7 +2,7 @@
 
 @include_once ("database.php");
 
-// GET 
+// GET PRODUCTS HISTORY
 $query = "SELECT * FROM `bakery_products_history` ORDER BY `date`";
 $productHistory = db_query($query);
 
