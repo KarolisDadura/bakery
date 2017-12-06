@@ -1,6 +1,6 @@
 <?php
 
-@include_once ("database.php");
+@include_once("database.php");
 
 // GET PRODUCTS HISTORY
 $query = "SELECT * FROM `bakery_products_history` ORDER BY `date`";
@@ -12,4 +12,4 @@ $productHistory = db_query($query);
 $query = "SELECT * FROM `bakery_products`";
 $products = db_query($query);
 
-@include_once ("view/data-table.php");
+@include_once("view/data-table.php");

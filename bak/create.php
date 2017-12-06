@@ -117,4 +117,4 @@ function createNewProduct ($existing_data, $new_data)
 	return $existing_data;
 }*/
 
-echo "<br> <a href=\"new.php\">grįžti į pradžią</a>";
+echo ">grįžti į pradžią</a>";
