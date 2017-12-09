@@ -9,6 +9,13 @@ class CoreModel
     private $password = "";
     private $dbname = "kd_bakery";
     private $conn;
+    protected $table;
+
+    public function  __construct()
+    {
+        if(!$this->table)
+            die('No table name provided');
+    }
 
     private function connect()
     {
@@ -36,7 +43,7 @@ class CoreModel
 
     }
 
-    protected function generateInsertQuery(string $tableName, array $data, bool $uuid = false): string
+    protected function generateInsertQuery(array $data, bool $uuid = false): string
     {
 
         if ($uuid)
@@ -53,8 +60,13 @@ class CoreModel
         $values = rtrim($values, ",");
 
 
-        $query = "INSERT INTO `$tableName` ($keys) VALUES ($values)";
+        $query = "INSERT INTO `". $this->table . "` ($keys) VALUES ($values)";
 
         return ($query);
+    }
+    public function list ()
+    {
+        $query = "SELECT * FROM `" . $this->table . "` WHERE `deleted_at` IS NULL";
+        return $this->query($query);
     }
 }
