@@ -6,7 +6,7 @@
 </head>
 <body style="text-align: center;">
 
-<form method="POST" action="create.php">
+<form method="POST" action="?view=product&action=create">
 
     <div>Pavadinimas:</div>
     <input type="text" name="name"> <br>
@@ -15,16 +15,16 @@
     <input type="number" name="ean"> <br>
 
     <div>Mato vienetas</div>
-    <select>
+    <select name = "unit">
         <option value="KG">KG</option>
         <option value="PCS">VNT</option>
     </select> <br>
 
     <div> Svoris:</div>
-    <input type="number" step="0.001" name="Weight"> <br>
+    <input type="number" step="0.001" name="weight"> <br>
 
     <div> Savikaina:</div>
-    <input type="number" step="0.001" name="primary_price"> <br>
+    <input type="number" step="0.001" name="prime_cost"> <br>
 
     <div> Pardavimo kaina:</div>
     <input type="number" step="0.001" name="sales_price"> <br>
