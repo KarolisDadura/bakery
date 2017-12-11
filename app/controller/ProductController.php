@@ -45,17 +45,12 @@ class ProductController
             $data .='</tr>';
         }
 
-        $template= new TemplateEngineController('table', $config);
+        $template= new TemplateEngineController('table-list');
+        $template->set('header',$header);
+        $template->set('data',$data);
 
-        echo "<table class='table table-bordered'>";
-        echo "<thead>";
-        echo "<tr>";
-        echo $header;
-        echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
-        echo $data;
-        echo "</tbody>";
-        echo "</table>";
+        $template->echoOutput();
+
+
     }
 }
