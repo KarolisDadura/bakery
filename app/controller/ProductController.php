@@ -8,7 +8,10 @@ class ProductController
 {
     public function create(): string
     {
-        return file_get_contents('app/view/product/new.php');
+        $template= new TemplateEngineController('new-product');
+
+
+        $template->echoOutput();
     }
 
     public function store(): string

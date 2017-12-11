@@ -29,7 +29,7 @@ class TemplateEngineController
 
         if(!file_exists($this->viewName))
         {
-            die("error oading file ($this->viewName)")
+            die("error oading file ($this->viewName)");
         }
 
 

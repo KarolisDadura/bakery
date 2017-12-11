@@ -29,6 +29,6 @@
 
     </form>
     <br>
-   <!-- <a href="index.php">grįžti į pradžią</a> <br>-->
+
 
 </div>

@@ -18,7 +18,7 @@ class Bakery
             switch ($view) {
                 case 'product':
                     if ($action == 'new')
-                        $this->show((new ProductController())->create());
+                        (new ProductController()->create());
                     elseif ($action=='list')
                        (new ProductController())->list();
                     break;
