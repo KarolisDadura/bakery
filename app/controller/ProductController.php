@@ -44,7 +44,10 @@ class ProductController
             }
             $data .='</tr>';
         }
-        echo "<table>";
+
+        $template= new TemplateEngineController('table', $config);
+
+        echo "<table class='table table-bordered'>";
         echo "<thead>";
         echo "<tr>";
         echo $header;
