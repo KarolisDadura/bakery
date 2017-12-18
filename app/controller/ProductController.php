@@ -6,16 +6,18 @@ use app\Model\Product;
 
 class ProductController
 {
-    public function create(): string
+    public function create()
     {
-        $template= new TemplateEngineController('new-product');
-
-
+        $template = new TemplateEngineController('new-product');
         $template->echoOutput();
     }
 
     public function store(): string
     {
+        print_r($_POST);
+        print_r($_FILES);
+
+        die();
         // Product::create($_POST); use like optional
 
         $model = new Product();
@@ -41,16 +43,17 @@ class ProductController
                     $header .= '<th>' . $key . '</th>';
                 }
             }
-            $data .='<tr>';
+            $data .= '<tr>';
             foreach ($item as $key => $value) {
                 $data .= '<td>' . $value . '</td>';
             }
-            $data .='</tr>';
+            $data .= '</tr>';
         }
 
-        $template= new TemplateEngineController('table-list');
-        $template->set('header',$header);
-        $template->set('data',$data);
+        $template = new TemplateEngineController('table-list');
+        $template->set('header', $header);
+        $template->set('data', $data);
+        $template->set('ending', 'Lentelės pabaiga.');
 
         $template->echoOutput();
 

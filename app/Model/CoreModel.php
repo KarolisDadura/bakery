@@ -19,7 +19,7 @@ class CoreModel
 
     private function connect()
     {
-        $this->conn = mysqli_connect($this->servername, $this->username,$this->password,$this->dbname, 3307);
+        $this->conn = mysqli_connect($this->servername, $this->username,$this->password,$this->dbname, 3308);
 
         if (!$this->conn) {
             die("Could not connect");
@@ -64,9 +64,16 @@ class CoreModel
 
         return ($query);
     }
+
     public function list ()
     {
         $query = "SELECT * FROM `" . $this->table . "` WHERE `deleted_at` IS NULL";
+        return $this->query($query);
+    }
+
+    public function find (string $id)
+    {
+        $query = "SELECT * FROM `" . $this->table . "` WHERE `deleted_at` IS NULL AND `id`=$id";
         return $this->query($query);
     }
 }

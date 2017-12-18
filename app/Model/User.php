@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vartotojas
- * Date: 2017.12.09
- * Time: 13:34
- */
 
 namespace app\Model;
 
@@ -12,9 +6,9 @@ namespace app\Model;
 use app\Model\interfaces\Destroyable;
 use app\Model\interfaces\Manageable;
 
-class ProductHistory extends CoreModel implements Manageable, Destroyable
+class User extends CoreModel implements Manageable, Destroyable
 {
-    protected $table = 'bakery_products_history';
+    protected $table = 'bakery_users';
 
     public function create(array $data)
     {
@@ -31,5 +25,10 @@ class ProductHistory extends CoreModel implements Manageable, Destroyable
     public function destroy()
     {
         // TODO: Implement destroy() method.
+    }
+    public function auth($data)
+    {
+        $query = " SELECT * FROM `" . $this->table . "` WHERE `deleted_at` IS NULL AND `email` = '" . $data['email'] . "' AND `password` = '" . $data['password']. "'";
+        return $this->query($query);
     }
 }
